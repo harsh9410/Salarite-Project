@@ -1,6 +1,12 @@
 # Salarite – Virtual HR & ATS Platform
 
-Salarite is a Virtual HR and Applicant Tracking System (ATS) designed to help employers manage HR tasks, track task progress, manage candidates, and schedule interviews.
+Salarite is a Virtual HR and Applicant Tracking System (ATS) designed to help employers manage HR tasks, track progress, manage candidates, and schedule interviews.
+
+## Live Demo
+
+- **Frontend:** https://salarite-project-1.onrender.com
+- **Backend API:** https://salarite-project.onrender.com
+- **API Documentation:** https://salarite-project.onrender.com/docs
 
 ## Features
 
@@ -11,12 +17,12 @@ Salarite is a Virtual HR and Applicant Tracking System (ATS) designed to help em
 ### 2. Task Management
 - Employers can create and assign tasks to Virtual HR.
 - Tasks include title, description, and deadline.
-- Track task status: Pending, In Progress, and Completed.
+- Track status: Pending, In Progress, and Completed.
 
 ### 3. Virtual HR Workspace
-- Virtual HR can view assigned tasks.
-- Update task progress and completion status.
-- Employer can see task updates automatically.
+- View assigned tasks.
+- Update task progress.
+- Employers can see task updates automatically.
 
 ### 4. Candidate Management
 - View candidates based on scheduled interviews.
@@ -47,35 +53,39 @@ Salarite is a Virtual HR and Applicant Tracking System (ATS) designed to help em
 ## Project Structure
 
 ```text
-Salarite/
+Salarite-Project/
+├── Backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── requirements.txt
+│
 ├── frontend/
 │   ├── src/
 │   │   ├── App.jsx
 │   │   ├── App.css
 │   │   └── api.js
-│   └── package.json
-│
-├── backend/
-│   ├── main.py
-│   └── schemas.py
+│   ├── package.json
+│   └── index.html
 │
 └── README.md
 ```
 
 ## Installation and Setup
 
-### 1. Clone the Repository
+### 1. Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd Salarite
+git clone https://github.com/harsh9410/Salarite-Project.git
+cd Salarite-Project
 ```
 
-### 2. Start the Backend
+### 2. Start Backend
 
 ```bash
-cd backend
-pip install fastapi uvicorn sqlalchemy
+cd Backend
+pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
@@ -83,7 +93,7 @@ Backend URL: http://127.0.0.1:8000
 
 API Documentation: http://127.0.0.1:8000/docs
 
-### 3. Start the Frontend
+### 3. Start Frontend
 
 Open another terminal:
 
@@ -95,32 +105,43 @@ npm run dev
 
 Frontend URL: http://localhost:5173
 
+For local development, the frontend uses the local backend URL by default.
+
+## Deployment
+
+The project is deployed using Render.
+
+- Frontend is deployed as a Static Site.
+- Backend is deployed as a Python Web Service.
+- Frontend connects to the backend through the `VITE_API_URL` environment variable.
+
 ## Demo Information
 
 - Virtual HR User ID: 1
 - Virtual HR Email: hr@salarite.com
+- No demo password is configured.
 
-No demo password is configured in this documentation.
+## Current Scope and Limitations
 
-## Current Scope
-
-This project currently supports task management, task status updates, candidate listing based on scheduled interviews, and interview scheduling.
-
-Voice, Video, and Chat are currently interview scheduling modes; actual calling functionality is not implemented.
+- Task management and status updates are implemented.
+- Employer dashboard refreshes task information automatically.
+- Candidate listing is based on scheduled interviews.
+- Voice, Video, and Chat are interview scheduling modes; actual calling functionality is not implemented.
+- Authentication and role-based access control are not implemented.
+- Settings are currently display-only.
+- Notifications are activity-based and are not stored as persistent notification history.
 
 ## Future Improvements
 
-- Real-time updates using WebSockets.
+- WebSocket-based instant updates.
 - Candidate registration and profile management.
 - Actual voice and video interview integration.
 - Authentication and role-based access control.
-- Cloud deployment.
+- Persistent notification management.
 
 ## Author
 
 **Harsh Gupta**
 
-GitHub: https://github.com/harsh9410
-
-LinkedIn: https://www.linkedin.com/in/harsh-gupta-898852327/# Salarite
-# Salarite-Project
+- GitHub: https://github.com/harsh9410
+- LinkedIn: https://www.linkedin.com/in/harsh-gupta-898852327/
